@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/" class="userForm">
+            <div class="tab">
+                <button class="tablinks" id="info" onclick="openCity(event, 'London')">01 CUSTOMER INFO</button>
+                <button class="tablinks" id="shipping" onclick="openCity(event, 'Paris')">02 SHIPPING INFO</button>
+                <button class="tablinks" id="payment" onclick="openCity(event, 'Tokyo')">03 PAYMENT SELECTION</button>
+            </div>
+
+
+            <div id="London" class="tabcontent">
+                <h1 class="mainTitle">Customer information</h1>
+                <div class="tabList">
+                    <div class="tabItem1"><label for="first-name">FIRST NAME</label>
+                        <input type="text" id="first-name" required oninput="ValidName()" minlength="3">
+                    </div>
+                    <div class="tabItem2">
+                        <label for="first-name">LAST NAME</label>
+                        <input type="text" id="last-name">
+                    </div>
+                    <div class="tabItem3">
+                        <label for="address">ADDRESS</label>
+                        <input type="text" id="address">
+                    </div>
+                    <div class="tabItem4">
+                        <label for="selectCountry">Country</label>
+                        <select name="select-country" id="selectCountry"> 
+                            <option value="value1">Select your Country</option>
+                            <option value="value2" selected>Ukraine</option>
+                            <option value="value3">Canada</option>
+                          </select>
+                    </div>
+                    <div class="tabItem5">
+                        <label for="city">CITY</label>
+                        <input type="text" id="city" value="Kryviy Rig">
+                    </div>
+                    <div class="tabItem6">
+                        <label for="postCode">POSTAL CODE</label><br>
+                        <input type="text" id="postCode">
+                        <button id="find">Find</button>
+                    </div>
+                    <div class="tabItem7">
+                        <label for="city">PHONE</label>
+                        <input type="text" id="phone" oninput="ValidPhone()">
+                    </div>
+
+                    <div class="tabItem8">
+                        <a href="#" class="returnShopLink">Return to shop</a>
+                    </div>
+
+                    <div class="tabItem9">
+                        <button id="continue" onclick="continueShipping()" disabled>Continue to Shipping</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="Paris" class="tabcontent">
+                <h1 class="mainTitle">Shipping information</h1>
+                <div class="mapsBlock">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20309.075323923767!2d30.4721233!3d50.4851493!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdfd022c274b%3A0x72f7ab0b682b793!2z0J_QvtGH0LDQudC90LA!5e0!3m2!1sru!2sua!4v1627343959885!5m2!1sru!2sua"
+                        width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="decr">
+                        <div class="deskrBlock">
+                            Tatas Shevhenko <br>Unit2 Green Mount Park <br>Halifax <br>Phone +38097-132-45-67
+                            <a href="#" class="decrLink">Edit Address</a>
+                            <a href="#" class="decrLink">Add New</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h1 class="mainTitle">Shipping Method</h1>
+                <div class="methodList">
+                    <div class="method-item">
+                        <input type="radio" name="type-delivery" id="standart" data-val="dstandart">
+                        <label class="rstandart" for="standart">Standart Delivery   </label><span class="bold">Free</span>
+                        <div class="del-info">
+                            Freebie checkout form of the third step in sketchup. Feel free to download and use it for your progect
+                        </div>
+                    </div>
+                    <div class="method-item">
+                        <input type="radio" name="type-delivery" id="fast" data-val="dfast">
+                        <label class="rfast" for="fast">Fast Delivery   </label><span>8.00 Uah</span>
+                        <div class="del-info">
+                            Freebie checkout form of the third step in sketchup. Feel free to download and use it for your progect
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navButton">
+                    <a href="#" onclick="backToCustomerInfo()" class="returnShopLink">Back to Customer Info</a>
+                    <button id="contPay" onclick="continuePay()">Continue to payment</button>
+                </div>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+                <h1 class="mainTitle">Payment selection</h1>
+
+            </div>
+        </form>
+        <!-- <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.maskedinput.js"></script>-->
+        <script src="js/main.js"></script>
+    </div>
+</body>
+
+</html>
